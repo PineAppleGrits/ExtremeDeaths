@@ -1,0 +1,21 @@
+name: Extremedeaths
+version: '${project.version}'
+main: org.sevencraft.extremedeaths.Extremedeaths
+api-version: 1.13
+authors: [ Sevencraft, Grits ]
+description: A plugin that lets you die specific amount of times.
+commands:
+  edeaths:
+    description: Main command of ExtremeDeaths
+  deaths:
+    description: Shows your deaths count.
+permissions:
+  extremedeaths.bypass:
+    description: Bypass death counter
+    default: op
+  extremedeaths.reset:
+    description: Reset users counters
+    default: op
+  extremedeaths.reload:
+    description: Reload configuration
+    default: op

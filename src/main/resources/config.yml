@@ -1,0 +1,23 @@
+# Death limit (Bypass using extremedeaths.bypass permission)
+max-deaths: 5
+
+# Message to send when player joins the server and when doing /deaths
+deaths-command: "&cYou have died %d times, be careful."
+messages:
+  # Message when player dies.
+  on-death: "&cYou can die %d more times."
+  # Message to send when player dies for last time, it will kick message if kick is set to true.
+  last-death: "&cYou can't join anymore because you died too many times."
+  # Broadcast message when a player dies for last time
+  broadcast: "&c{player} died for &4{cause}. A total of {total} players have died forever."
+
+
+over-limit:
+  # Kick player from the server when dies for last time.
+  kick-on-death: true
+  # Allow players from joining after passing the deaths limit
+  allow-join: true
+  # Ignore if join is not allowed
+  spectator-mode: true
+
+

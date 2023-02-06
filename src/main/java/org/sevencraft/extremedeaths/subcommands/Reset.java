@@ -1,11 +1,13 @@
 package org.sevencraft.extremedeaths.subcommands;
 
-import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.sevencraft.extremedeaths.Extremedeaths;
+import org.sevencraft.extremedeaths.Utils;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 import static org.sevencraft.extremedeaths.Utils.tlc;
@@ -19,7 +21,7 @@ public class Reset implements SubCommand {
 
     @Override
     public String getPermission() {
-        return "extremedeaths.reset";
+        return Utils.Permissions.RESET;
     }
 
     @Override

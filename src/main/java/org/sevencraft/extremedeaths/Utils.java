@@ -12,12 +12,20 @@ import java.util.stream.Collectors;
 public class Utils {
     public static List<String> getStrings(CommandSender commandSender, Map<String, SubCommand> subcommands) {
         return new ArrayList<>(subcommands.entrySet().stream().filter(entry -> {
-            if(entry.getValue().getPermission() == null) return true;
-            else if(commandSender.hasPermission(entry.getValue().getPermission())) return true;
-            return false;
+            if (entry.getValue().getPermission() == null) return true;
+            else return commandSender.hasPermission(entry.getValue().getPermission());
         }).collect(Collectors.toMap(p -> p.getKey(), p -> p.getValue())).keySet());
     }
-    public static String tlc(String str){
+
+    public static String tlc(String str) {
         return ChatColor.translateAlternateColorCodes('&', str);
+    }
+
+    public class Permissions {
+        public static final String BYPASS = "extremedeaths.bypass";
+        public static final String DEATHS = "extremedeaths.deaths";
+        public static final String RESET = "extremedeaths.reset";
+        public static final String RELOAD = "extremedeaths.reload";
+
     }
 }

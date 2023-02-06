@@ -1,13 +1,11 @@
 package org.sevencraft.extremedeaths.subcommands;
 
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 import org.sevencraft.extremedeaths.Extremedeaths;
+import org.sevencraft.extremedeaths.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
-import java.util.stream.Collectors;
 
 import static org.sevencraft.extremedeaths.Utils.tlc;
 
@@ -20,7 +18,7 @@ public class Reload implements SubCommand {
 
     @Override
     public String getPermission() {
-        return "extremedeaths.reload";
+        return Utils.Permissions.RELOAD;
     }
 
     @Override

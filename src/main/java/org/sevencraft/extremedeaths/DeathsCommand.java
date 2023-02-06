@@ -1,6 +1,5 @@
 package org.sevencraft.extremedeaths;
 
-import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -8,9 +7,7 @@ import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 import static org.sevencraft.extremedeaths.Utils.tlc;
@@ -25,7 +22,7 @@ public class DeathsCommand implements CommandExecutor, TabExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (args.length > 0 && sender.hasPermission("extremedeaths.deaths") && sender.getName() != args[0]) {
+        if (args.length > 0 && sender.hasPermission(Utils.Permissions.DEATHS) && sender.getName() != args[0]) {
             // If players online try to find by uuid if not find by username.
             Integer deathCount;
             Player player = sender.getServer().getPlayer(args[0]);
@@ -47,7 +44,7 @@ public class DeathsCommand implements CommandExecutor, TabExecutor {
 
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
-        if (sender.hasPermission("extremedeaths.deaths"))
+        if (sender.hasPermission(Utils.Permissions.DEATHS))
             return sender.getServer().getOnlinePlayers().stream().map(p -> p.getName()).collect(Collectors.toList());
         return new ArrayList<>();
     }

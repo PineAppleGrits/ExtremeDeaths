@@ -6,7 +6,6 @@ import co.aikar.idb.DatabaseOptions;
 import co.aikar.idb.PooledDatabaseOptions;
 import org.sevencraft.extremedeaths.Extremedeaths;
 
-import javax.xml.crypto.Data;
 import java.io.File;
 import java.sql.SQLException;
 import java.util.List;

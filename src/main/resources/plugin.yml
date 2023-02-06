@@ -16,6 +16,9 @@ permissions:
   extremedeaths.reset:
     description: Reset users counters
     default: op
+  extremedeaths.deaths:
+    description: Allows showing other players deaths
+    default: op
   extremedeaths.reload:
     description: Reload configuration
     default: op

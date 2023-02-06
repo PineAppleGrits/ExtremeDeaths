@@ -26,7 +26,7 @@ public class EventsHandler implements Listener {
     @EventHandler
     public void onPlayerRespawnEvent(PlayerRespawnEvent event) {
         Player player = event.getPlayer();
-        if (player.hasPermission("extremedeaths.bypass")) return;
+        if (player.hasPermission(Utils.Permissions.BYPASS)) return;
         ConfigurationSection overLimit = plugin.getConfig().getConfigurationSection("over-limit");
         ConfigurationSection messages = plugin.getConfig().getConfigurationSection("messages");
         boolean elegiblePlayer = elegiblePlayer(player.getUniqueId());
@@ -44,7 +44,7 @@ public class EventsHandler implements Listener {
     @EventHandler
     public void onEntityDeathEvent(PlayerDeathEvent event) {
         Player player = event.getEntity().getPlayer();
-        if (player.hasPermission("extremedeaths.bypass")) return;
+        if (player.hasPermission(Utils.Permissions.BYPASS)) return;
         plugin.getDB().insertPlayerDeath(player.getUniqueId(), player.getName(), event.getDeathMessage());
         ConfigurationSection messages = plugin.getConfig().getConfigurationSection("messages");
         Integer maxDeaths = plugin.getConfig().getInt("max-deaths");
@@ -93,7 +93,7 @@ public class EventsHandler implements Listener {
         OfflinePlayer offlinePlayer = plugin.getServer().getOfflinePlayer(uuid);
         if (offlinePlayer == null) return true;
         if (offlinePlayer.getPlayer() != null)
-            if (offlinePlayer.getPlayer().hasPermission("extremedeaths.bypass")) return true;
+            if (offlinePlayer.getPlayer().hasPermission(Utils.Permissions.BYPASS)) return true;
         if (deathCount > maxDeaths) return false;
         return true;
     }

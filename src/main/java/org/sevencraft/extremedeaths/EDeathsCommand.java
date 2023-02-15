@@ -4,6 +4,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
+import org.sevencraft.extremedeaths.subcommands.Lifes;
 import org.sevencraft.extremedeaths.subcommands.Reload;
 import org.sevencraft.extremedeaths.subcommands.Reset;
 import org.sevencraft.extremedeaths.subcommands.SubCommand;
@@ -24,6 +25,7 @@ public class EDeathsCommand implements CommandExecutor, TabExecutor {
         this.plugin = plugin;
         subcommands.put("reset", new Reset(plugin));
         subcommands.put("reload", new Reload(plugin));
+        subcommands.put("lifes", new Lifes(plugin));
     }
 
     @Override

@@ -28,19 +28,19 @@ public class Reset implements SubCommand {
     public void execute(CommandSender sender, String[] args) {
         String query = args.length < 1 ? "**" : args[0];
         if (query.equals("**")) {
-            plugin.getDB().resetPlayersDeaths();
+            plugin.getDB().deletePlayerDeaths();
             sender.sendMessage(tlc("&aThe death count of all players has been reseted."));
         } else if (query.equals("*")) {
             List<UUID> uuids =  sender.getServer().getOnlinePlayers().stream().map(p -> p.getUniqueId()).collect(Collectors.toList());
-            plugin.getDB().resetPlayerDeaths(uuids);
+            plugin.getDB().deletePlayerDeaths(uuids);
             sender.sendMessage(tlc("&aThe death count of all online players has been reseted."));
         } else {
             Player p = sender.getServer().getPlayer(query);
             if(p == null){
                 // Offlineplayer find by username
-                plugin.getDB().resetPlayerDeaths(query);
+                plugin.getDB().deletePlayerDeaths(query);
             } else {
-                plugin.getDB().resetPlayerDeaths(p.getUniqueId());
+                plugin.getDB().deletePlayerDeaths(p.getUniqueId());
             }
             sender.sendMessage(tlc(String.format("&aThe death count of &6%s&a has been reseted.", p == null ? query : p.getName())));
             return ;

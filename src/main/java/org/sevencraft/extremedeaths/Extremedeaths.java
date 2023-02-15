@@ -15,6 +15,9 @@ public final class Extremedeaths extends JavaPlugin {
         ConfigManager.getInstance().setPlugin(this);
         ConfigManager.getInstance().getConfig("config.yml");
         ConfigManager.getInstance().reloadConfigs();
+        if (getServer().getPluginManager().getPlugin("PlaceholderAPI") != null) {
+            new EDeathsExpansion(this).register();
+        }
         databaseManager = new DatabaseAPI(this);
         databaseManager.initDB();
         getServer().getPluginManager().registerEvents(new EventsHandler(this), this);

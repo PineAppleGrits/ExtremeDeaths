@@ -3,6 +3,8 @@ version: '${project.version}'
 main: org.sevencraft.extremedeaths.Extremedeaths
 api-version: 1.13
 authors: [ Sevencraft, Grits ]
+softdepend:
+  - PlaceholderAPI
 description: A plugin that lets you die specific amount of times.
 commands:
   edeaths:

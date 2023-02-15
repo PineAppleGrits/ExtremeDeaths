@@ -7,7 +7,6 @@
     <groupId>org.sevencraft</groupId>
     <artifactId>extremedeaths</artifactId>
     <version>1.0</version>
-    <packaging>jar</packaging>
 
     <name>Extremedeaths</name>
 
@@ -72,6 +71,10 @@
                 <id>aikar</id>
                 <url>https://repo.aikar.co/content/groups/aikar/</url>
             </repository>
+        <repository>
+            <id>placeholderapi</id>
+            <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
+        </repository>
 
     </repositories>
 
@@ -98,6 +101,19 @@
             <artifactId>HikariCP</artifactId>
             <version>2.4.1</version>
         </dependency>
+        <dependency>
+            <groupId>me.clip</groupId>
+            <artifactId>placeholderapi</artifactId>
+            <version>2.11.2</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.33</version>
+        </dependency>
+
 
     </dependencies>
 </project>

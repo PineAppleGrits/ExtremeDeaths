@@ -20,7 +20,8 @@ public final class Extremedeaths extends JavaPlugin {
         }
         databaseManager = new DatabaseAPI(this);
         databaseManager.initDB();
-        getServer().getPluginManager().registerEvents(new EventsHandler(this), this);
+        this.deathsCache = new DeathsCache();
+        getServer().getPluginManager().registerEvents(new ListenerClass(this), this);
         this.getCommand("edeaths").setExecutor(new EDeathsCommand(this));
         this.getCommand("deaths").setExecutor(new DeathsCommand(this));
 
